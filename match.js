@@ -1,6 +1,18 @@
-var data1;
-var json;
-function getMatch(matchid, apikey) {
+function getMatch() {
+	
+	if($("#matchid").val() == '') {
+		alert('Please Enter a match ID');
+		return;
+	}
+	if($("#apikey").val() == '') {
+		alert('Please an API Key');
+		return;
+	}
+	
+	matchid = $("#matchid").val();
+	apikey = $("#apikey").val()
+
+	
 	var url = 'https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?match_id=' + matchid + '&key=' + apikey +'&start_at_match_id=0&result=1';
 	$.getJSON("http://query.yahooapis.com/v1/public/yql",
 	  {
@@ -9,7 +21,6 @@ function getMatch(matchid, apikey) {
 	  },
 	  function(data){
 		handleData(data.query.results);
-		data1 = data;
 	  }
 	);
 }
