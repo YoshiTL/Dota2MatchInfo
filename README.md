@@ -1,0 +1,1 @@
+You can get the API key from <a href="http://dev.dota2.com/showthread.php?t=47115">here</a>.

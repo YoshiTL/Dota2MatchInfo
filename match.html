@@ -1,0 +1,198 @@
+<html>
+<head>
+	<title>Match</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="match.js"></script>
+	<script type="text/javascript" src="heroes.js"></script>
+	<script type="text/javascript" src="item.js"></script>
+
+	<style type="text/css">
+		th { text-align: left}
+	</style>
+</head>
+<body>
+<div id="match"></div>
+	<form>
+		Match ID <input type="text" id="matchid" /><br />
+		Api Key <input type="text" id="apikey" />
+		<input type="button" value="Grab Match" onclick="getMatch(this.form.matchid.value, this.form.apikey.value)" />
+	</form>	
+	<table width="100%">
+		<tr>
+		<td width="70%"><b>Match ID:</b>
+		<span id="match_id">0</span></td>
+		<td><b>Season:</b>
+		<span id="season">0</span></td>
+		<td><b>Date:</b>
+		<span id="date">0</span></td>
+		<td><b>Game Time:</b>
+		<span id="gametime">0</span></td>
+		</tr>
+	</table>
+	<div id="match">
+		<table width="100%">
+			<tr>
+				<th>Player ID</th>
+				<th>Hero</th>
+				<th>Level</th>
+				<th>Kills</th>
+				<th>Deaths</th>
+				<th>Assists</th>
+				<th>Items</th>
+				<th>Creep Score</th>
+				<th>Denies</th>
+				<th>GPM</th>
+				<th>XPM</th>
+			</tr>
+			<tr>
+				<th>Radiant</th>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Dire</th>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="player">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<div id="reveal"><b>Reveal Winner</b></div>
+	<div id="winner" style="display:none">Nobody Yet</div>
+	<div id="showinfo"><b>Show Info</b></div>
+	<div id="info" style="display:none">You can get the API key from <a href="http://dev.dota2.com/showthread.php?t=47115">here</a>.</div>
+	<script>
+		$("#showinfo").click(function () {
+				$("#info").toggle();
+			});
+		$("#reveal").click(function () {
+				$("#winner").toggle();
+			});
+</script>
+</body>
+</html>
