@@ -21,12 +21,18 @@
 	</table>
 	<script>
 		hash = window.location.hash;
+		if(hash != undefined) {
 		n=hash.split("#"); 
 		data=n[1].split(";");
 
 		$("#apikey").val(data[0]);
 		$("#nextpage").val(data[1]);
 		$("#playerid").val(data[2]);
+		}
+		else data[0] = '';
+			</script>
+	<script>
+		document.write("<a href='match.html#" + data[0] + "'> Match</a>");
 	</script>
 </body>
 </html>

@@ -11,6 +11,7 @@
 	</style>
 </head>
 <body>
+<div>
 <div id="match"></div>
 	<form>
 		Match ID <input type="text" id="matchid" /><br />
@@ -200,6 +201,10 @@
 
 		$("#apikey").val(data[0]);
 		$("#matchid").val(data[1]);
+		
+	</script>
+	<script>
+	document.write("<a href='matchlist.html#" + data[0] + "'> Match list</a>");
 	</script>
 </body>
 </html>
