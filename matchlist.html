@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Match List</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="matchlist.js"></script>
+	<script type="text/javascript" src="heroes.js"></script>
+</head>
+<body>
+	<form>
+		Api Key <input type="text" id="apikey" />
+		Start at Game ID<input type="text" id="nextpage" value="0"/>
+		Player ID <input type="text" id="playerid" />
+		Player Name <input type="text" id="playername" />
+		<input type="button" value="Grab Page" onclick="getMatchList(this.form.nextpage.value, this.form.apikey.value, this.form.playerid.value, this.form.playername.value)" />
+		<p> Every click on this buttion will load another 25 games. 500 Games max</p>
+	</form>
+	<table id="matchlist" width="100%">
+		<tr>
+			<th>Match ID</th><th>Date</th><th>Radiant</th><th>Dire</th><th>Lobby Type</th>
+		</tr>
+	</table>
+	<script>
+		hash = window.location.hash;
+		n=hash.split("#"); 
+		data=n[1].split(";");
+
+		$("#apikey").val(data[0]);
+		$("#nextpage").val(data[1]);
+		$("#playerid").val(data[2]);
+	</script>
+</body>
+</html>
+

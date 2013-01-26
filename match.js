@@ -5,7 +5,7 @@ function getMatch() {
 		return;
 	}
 	if($("#apikey").val() == '') {
-		alert('Please an API Key');
+		alert('Please enter an API Key');
 		return;
 	}
 	
@@ -20,7 +20,7 @@ function getMatch() {
 		format: "json"
 	  },
 	  function(data){
-		handleData(data.query.results);
+		handleData(data.query.results, apikey);
 	  }
 	);
 }
@@ -30,7 +30,7 @@ function secondsTimeSpanToHMS(s) {
     s -= h*3600;
     var m = Math.floor(s/60); 
     s -= m*60;
-    return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); //zero padding on minutes and seconds
+    return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); 
 }
 
 function unixToDate(unix) {
@@ -38,7 +38,7 @@ function unixToDate(unix) {
 	return date.toLocaleString();
 } 
 
-function handleData(data) {
+function handleData(data, apikey) {
 	i = 1;
 	x = 0;
 	
@@ -52,8 +52,9 @@ function handleData(data) {
 	$('.player').children().each(function (a, val) {
 		switch(i)
 		{
+		
 			case 1:
-				content = data.result.players[x].account_id;
+				content = "<a href='matchlist.html#" + apikey + ";0;" + data.result.players[x].account_id + "'>" + data.result.players[x].account_id + "</a>";
 			break;
 			case 2:
 				content = "<img src='" + heroes[data.result.players[x].hero_id] + "'/>";

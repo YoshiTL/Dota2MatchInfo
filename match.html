@@ -194,6 +194,12 @@
 		$("#reveal").click(function () {
 				$("#winner").toggle();
 			});
-</script>
+		hash = window.location.hash;
+		n=hash.split("#"); 
+		data=n[1].split(";");
+
+		$("#apikey").val(data[0]);
+		$("#matchid").val(data[1]);
+	</script>
 </body>
 </html>
