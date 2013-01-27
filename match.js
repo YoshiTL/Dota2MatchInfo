@@ -14,6 +14,7 @@ function getMatch() {
 
 	
 	var url = 'https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?match_id=' + matchid + '&key=' + apikey +'&start_at_match_id=0&result=1';
+	
 	$.getJSON("http://query.yahooapis.com/v1/public/yql",
 	  {
 		q:      "select * from json where url=\"" + url + "\"",
@@ -24,6 +25,7 @@ function getMatch() {
 	  }
 	);
 }
+
 
 function secondsTimeSpanToHMS(s) {
     var h = Math.floor(s/3600); 

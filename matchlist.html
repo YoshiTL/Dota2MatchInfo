@@ -8,11 +8,12 @@
 <body>
 	<form>
 		Api Key <input type="text" id="apikey" />
-		Start at Game ID<input type="text" id="nextpage" value="0"/>
+		Min Date<input type="text" id="maxdate" value="0"/>
 		Player ID <input type="text" id="playerid" />
 		Player Name <input type="text" id="playername" />
-		<input type="button" value="Grab Page" onclick="getMatchList(this.form.nextpage.value, this.form.apikey.value, this.form.playerid.value, this.form.playername.value)" />
-		<p> Every click on this buttion will load another 25 games. 500 Games max</p>
+		<input type="button" value="Grab Page" onclick="getMatchList(0, this.form.apikey.value, this.form.playerid.value, this.form.playername.value, this.form.maxdate.value)" />
+		<input type="button" value="Clear" onclick="clearMatches()" />
+		<p id="info"></p>
 	</form>
 	<table id="matchlist" width="100%">
 		<tr>
@@ -26,7 +27,7 @@
 		data=n[1].split(";");
 
 		$("#apikey").val(data[0]);
-		$("#nextpage").val(data[1]);
+		$("#maxdate").val(data[1]);
 		$("#playerid").val(data[2]);
 		}
 		else data[0] = '';
